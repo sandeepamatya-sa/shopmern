@@ -35,18 +35,18 @@ app.use((error, req, res, next) => {
     });
 });
 
-const startServer = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO_URL);
-        console.log('✅ MongoDB connected');
-        const PORT = process.env.PORT || 5000;
-        app.listen(PORT, () => {
-            console.log(`🚀 Server running at http://localhost:${PORT}`);
-        });
-    } catch (error) {
-        console.error('❌ MongoDB connection failed:', error.message);
-        process.exit(1);
-    }
-};
+// Connect to MongoDB (shared for both local and Vercel)
+mongoose.connect(process.env.MONGO_URL)
+    .then(() => console.log('✅ MongoDB connected'))
+    .catch(err => console.error('❌ MongoDB connection failed:', err.message));
 
-startServer();
+// Start local dev server only when not on Vercel
+if (!process.env.VERCEL) {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running at http://localhost:${PORT}`);
+    });
+}
+
+// Export for Vercel serverless
+module.exports = app;
