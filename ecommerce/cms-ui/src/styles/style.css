@@ -1,0 +1,59 @@
+:root { --primary: #4f46e5; --sidebar-w: 240px; }
+
+body { background: #f1f5f9; }
+
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: #1e293b;
+  position: fixed;
+  top: 0; left: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.sidebar .brand { padding: 20px; font-size: 1.2rem; font-weight: 700; color: white; border-bottom: 1px solid #334155; }
+
+.sidebar .nav-link {
+  color: #94a3b8;
+  padding: 10px 20px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+  color: white;
+  background: #334155;
+}
+
+.sidebar .nav-link i { width: 18px; text-align: center; }
+
+.main-content {
+  margin-left: var(--sidebar-w);
+  min-height: 100vh;
+}
+
+.topbar {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.page-content { padding: 24px; }
+
+.stat-card { border: none; border-radius: 12px; overflow: hidden; }
+.stat-card .icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+
+.table th { font-weight: 600; color: #475569; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge-status { font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; }

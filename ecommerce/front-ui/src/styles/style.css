@@ -1,0 +1,32 @@
+:root {
+  --primary: #e44d26;
+  --dark: #1a1a2e;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+}
+
+.navbar-brand { font-weight: 700; color: var(--primary) !important; font-size: 1.5rem; }
+.btn-primary { background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover { background: #c43d1c; border-color: #c43d1c; }
+.btn-outline-primary { border-color: var(--primary); color: var(--primary); }
+.btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); }
+
+.product-card { transition: transform 0.2s, box-shadow 0.2s; border: none; border-radius: 12px; overflow: hidden; }
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.product-card img { height: 220px; object-fit: cover; }
+
+.section-title { font-weight: 700; color: var(--dark); position: relative; display: inline-block; }
+.section-title::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 50px; height: 3px; background: var(--primary); border-radius: 2px; }
+
+.badge-discount { background: var(--primary); font-size: 0.75rem; }
+.price-original { text-decoration: line-through; color: #999; font-size: 0.9rem; }
+.price-current { color: var(--primary); font-weight: 700; font-size: 1.1rem; }
+
+.cart-badge { position: absolute; top: -6px; right: -8px; background: var(--primary); color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 0.65rem; display: flex; align-items: center; justify-content: center; }
+
+footer { background: var(--dark); color: #aaa; }
+footer a { color: #aaa; text-decoration: none; }
+footer a:hover { color: white; }
